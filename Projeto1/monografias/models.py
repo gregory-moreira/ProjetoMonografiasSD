@@ -39,13 +39,13 @@ class Student(models.Model):
 
 class Monography(models.Model):
     title = models.CharField(max_length=50)
-    author = models.CharField(max_length=50)
-    advisor = models.CharField(max_length=50)
-    co_advisor = models.CharField()
+    author = models.ForeignKey(Student, on_delete=models.CASCADE)
+    advisor = models.ForeignKey(Author, on_delete=models.CASCADE)
+    co_advisor = models.ForeignKey(CoAuthor, on_delete=models.CASCADE)
     date = models.DateField()
     summary = models.CharField(max_length=100)
     key_words = models.CharField()
-    university = models.CharField(max_length=50)
+    university = models.CharField(max_length=80)
     course = models.CharField(max_length=50)
     monography = models.URLField()
 
