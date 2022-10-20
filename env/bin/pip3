@@ -1,4 +1,4 @@
-#!/home/gregory/Projeto1/env/bin/python3
+#!/Users/samuelcastro/projects/class/ProjetoMonografiasSD/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
