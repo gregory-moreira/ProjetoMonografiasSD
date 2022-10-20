@@ -40,8 +40,8 @@ class Student(models.Model):
 class Monography(models.Model):
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=50)
-    advisor = models.EmailField(max_length=50)
-    co_advisor = models.URLField()
+    advisor = models.CharField(max_length=50)
+    co_advisor = models.CharField()
     date = models.DateField()
     summary = models.CharField(max_length=100)
     key_words = models.CharField()
