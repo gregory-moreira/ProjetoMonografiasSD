@@ -10,7 +10,7 @@ class AdvisorView(View):
   def get(self, request):
     return render(request, 'monografias/create-advisor.html')
   
-  def post(self, reqeust):
+  def post(self, request):
     data = request.POST
     Advisor.objects.create(
       name=data['name'], 
@@ -30,7 +30,7 @@ class CoAdvisorView(View):
   def get(self, request):
     return render(request, 'monografias/create-co-advisor.html')
   
-  def post(self, reqeust):
+  def post(self, request):
     data = request.POST
     CoAdvisor.objects.create(
       name=data['name'], 
@@ -50,7 +50,7 @@ class AuthorView(View):
   def get(self, request):
     return render(request, 'monografias/create-author.html')
   
-  def post(self, reqeust):
+  def post(self, request):
     data = request.POST
     Author.objects.create(
       name=data['name'], 
@@ -80,17 +80,18 @@ class MonographyView(View):
     co_advisor = CoAdvisor.objects.get(pk=data['co_advisor'])
     author = Author.objects.get(pk=data['author'])
 
+    print(co_advisor)
+
     Monography.objects.create(
       title=data['title'], 
-      author=advisor, 
-      advisor=advisor, 
-      co_advisor=co_advisor, 
+      author=author,
+      advisor=advisor,
+      co_advisor=co_advisor,
       date=data['date'],
-      google_scholar=data['google_scholar'], 
       summary=data['summary'], 
-      key_words=data['linkedin'], 
+      key_words=data['key_words'], 
       university=data['university'], 
-      course=data['course']
+      course=data['course'],
       monography=data['monography']
     )
     return redirect('index')

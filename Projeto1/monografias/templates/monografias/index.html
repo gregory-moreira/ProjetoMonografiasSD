@@ -12,6 +12,13 @@
     <form action="{% url 'index' %}" method="post">
       {% csrf_token %}
 
+      <a href="/create-advisor">CADASTRAR ORIENTADOR</a> |
+      <a href="/create-co-advisor">CADASTRAR CO ORIENTADOR</a> |
+      <a href="/create-author">CADASTRAR AUTOR</a> |
+      <a href="/create-monography">CADASTRAR MONOGRAFIA</a> 
+      
+    </br>
+      
       <input
         class="input-text"
         type="text"
@@ -24,10 +31,13 @@
         Buscar
       </button>
     </form>
+
+    </br>
+
     {% if monographys %} {% for monography in monographys %}
     <a>{{monography.title}}</a>
     {% endfor %} {% else %}
-    <span>gatos</span>
+    <span>Nenhuma Monografia encontrada</span>
     {% endif %}
   </body>
 </html>
