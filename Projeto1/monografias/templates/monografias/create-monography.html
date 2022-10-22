@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../static/css/style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Criar Monografia</h1>
+    <form action="{% url 'create-monography' %}" method="post">
+      <label for="monography_name">Titulo:</label>
+      <input
+        class="input-text"
+        type="text"
+        name="monography_name"
+        id="monography_name"
+        required
+      />
+      <label for="monography_author">Monografia Autor:</label>
+      <input
+        class="input-text"
+        type="text"
+        name="monography_author"
+        id="monography_author"
+        required
+      />
+      <label for="monography_advisor">Monografia Orientador:</label>
+      <input
+        class="input-text"
+        type="text"
+        name="monography_advisor"
+        id="monography_advisor"
+        required
+      />
+      <label for="monography_co">Monografia Co Orientador:</label>
+      <input
+        class="input-text"
+        type="text"
+        name="monography_co-author"
+        id="monography_co-author"
+        required
+      />
+
+      <label for="monography_date">Data:</label>
+      <input
+        class="input-text"
+        type="text"
+        name="monography_date"
+        id="monography_date"
+        required
+      />
+      <label for="monography_resume">Resume:</label>
+      <input
+        class="input-text"
+        type="text"
+        name="monography_resume"
+        id="monography_resume"
+        required
+      />
+      <label for="monography_key">Palavra chave:</label>
+      <input
+        class="input-text"
+        type="text"
+        name="monography_key"
+        id="monography_key"
+        required
+      />
+      <label for="monography_university">Universidade:</label>
+      <input
+        class="input-text"
+        type="text"
+        name="monography_university"
+        id="monography_university"
+        required
+      />
+      <label for="monography_class">Class:</label>
+      <input
+        class="input-text"
+        type="text"
+        name="monography_class"
+        id="monography_class"
+        required
+      />
+      <label for="monography_pdf">Link PDF:</label>
+      <input
+        class="input-text"
+        type="text"
+        name="monography_pdf"
+        id="monography_pdf"
+        required
+      />
+
+      <button class="button-submit" style="margin-top: 30px" type="submit">
+        Create Student
+      </button>
+    </form>
+  </body>
+</html>

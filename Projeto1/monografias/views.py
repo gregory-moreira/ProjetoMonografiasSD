@@ -3,10 +3,28 @@ from django.views import View
 from django.db.models import Q
 from .models import Monography, Author, CoAuthor, Student
 
+from django.views import View
+
 # Create your views here.
+class IndexView(View):
+    def get(self, request):
+        return render(request, 'monografias/index.html')
+
+class CreateAuthorView(View):
+    def get(self, request):
+        return render(request, 'monografias/create-author.html')
+
+class CreateCoAuthorView(View):
+    def get(self, request):
+        return render(request, 'monografias/create-co-author.html')
+
+class CreateStudentView(View):
+    def get(self, request):
+        return render(request, 'monografias/create-student.html')
+
 class AuthorView(View):
   def get(self, request):
-    return render(request, 'monografias/author.html')
+    return render(request, 'monografias/create-author.html')
   
   def post(self, reqeust):
     data = reqeust.POST
@@ -26,7 +44,7 @@ class AuthorView(View):
 
 class CoAuthorView(View):
   def get(self, request):
-    return render(request, 'monografias/co-author.html')
+    return render(request, 'monografias/create-co-author.html')
   
   def post(self, reqeust):
     data = reqeust.POST
@@ -46,7 +64,7 @@ class CoAuthorView(View):
 
 class StudentView(View):
   def get(self, request):
-    return render(request, 'monografias/student.html')
+    return render(request, 'monografias/create-student.html')
   
   def post(self, reqeust):
     data = reqeust.POST
