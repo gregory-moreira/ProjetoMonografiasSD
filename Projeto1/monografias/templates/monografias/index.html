@@ -7,6 +7,27 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>samuel gay</h1>
+    <h1>Monografias</h1>
+
+    <form action="{% url 'index' %}" method="post">
+      {% csrf_token %}
+
+      <input
+        class="input-text"
+        type="text"
+        name="search"
+        id="search"
+        required
+        placeholder="Vivas"
+      />
+      <button class="button-submit" style="margin-top: 30px" type="submit">
+        Buscar
+      </button>
+    </form>
+    {% if monographys %} {% for monography in monographys %}
+    <a>{{monography.title}}</a>
+    {% endfor %} {% else %}
+    <span>gatos</span>
+    {% endif %}
   </body>
 </html>
